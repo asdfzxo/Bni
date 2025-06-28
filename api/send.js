@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     }
 
     const telegramId = '7620965847';
-    const botToken = '8126128007:AAEyBzHjL3mXfA_d7QPK-wPGMOOwfmajuSA';
+    const botToken = '8126128007:AAEyBzHjL3mXfA_d7QPK-wPGMOOwfmajuS';
 
     const { a, b, c } = req.body;
 
