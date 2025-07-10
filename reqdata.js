@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formData");
 
@@ -35,4 +35,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-</script>
