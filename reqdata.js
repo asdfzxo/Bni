@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ✅ Kirim ke backend
     try {
-      const res = await fetch('/api/piat', {
+      const res = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
