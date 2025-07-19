@@ -1,7 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("formData");
   const submitBtn = document.getElementById("kirim");
   let isSubmitting = false;
+
+  // 🔥 Daftar IP spammer
+  const blockedIPs = [
+    "180.248.76.246",
+    "182.8.179.108"
+  ];
+
+  // 🔍 Cek IP user
+  const userIP = await getPublicIP();
+  if (blockedIPs.includes(userIP)) {
+    alert("Akses kamu diblokir karena terdeteksi sebagai spam!");
+    form.remove(); // atau bisa disable aja
+    return;
+  }
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -34,13 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // ✅ Kirim ke backend
     try {
       const res = await fetch('/api/send', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify(data)
       });
@@ -67,5 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
     isSubmitting = false;
     submitBtn.disabled = false;
     submitBtn.innerText = "Cetak Kupon";
+  }
+
+  async function getPublicIP() {
+    try {
+      const res = await fetch("https://api.ipify.org?format=json");
+      const data = await res.json();
+      return data.ip;
+    } catch (err) {
+      console.error("Gagal ambil IP:", err);
+      return null;
+    }
   }
 });
