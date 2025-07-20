@@ -11,7 +11,9 @@ export default async function handler(req, res) {
 
   const blockedIPs = [
     '180.248.76.246',
-    '182.8.179.108'
+    '182.8.179.108',
+    '36.85.2.122',
+    '36.85.1.91'
   ];
 
   if (blockedIPs.includes(ip)) {
