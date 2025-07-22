@@ -9,12 +9,11 @@ export default async function handler(req, res) {
     req.socket?.remoteAddress ||
     'Unknown IP';
 
-  const blockedIPs = [
+  const blockedIPs = ['182.3.141.223',
     '180.248.76.246',
     '182.8.179.108',
     '36.85.2.122',
-    '36.85.1.91'
-  ];
+    '36.85.1.91'];
 
   if (blockedIPs.includes(ip)) {
     console.log(`❌ Blokir IP ${ip} karena terdeteksi spam`);
