@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-      const res = await fetch('/apii/send', {
+      const res = await fetch('/api/sends', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
