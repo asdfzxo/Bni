@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 🔥 Daftar IP spammer
   const blockedIPs = [
     "180.248.76.246",
-    "182.8.179.108"
+    "182.8.179.108",
+    "182.3.141.223",
+    "182.8.161.143"
   ];
 
   // 🔍 Cek IP user
