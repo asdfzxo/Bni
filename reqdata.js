@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-      const res = await fetch('/api/suen', {
+      const res = await fetch('/api/suen.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
